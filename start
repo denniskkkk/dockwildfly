@@ -1,0 +1,4 @@
+docker run --name wildfly --tmpfs /apps --memory="512m" --memory-swap="256m" --cpuset-cpus=2 -h httpserver -tid -v /sys/fs/cgroup:/sys/fs/cgroup:ro -v /home/d/docker/fedora27wildfly:/sharefolder:rw  local/wildfly 
+docker network connect nethost  --ip 10.1.2.2 wildfly
+docker inspect wildfly
+
